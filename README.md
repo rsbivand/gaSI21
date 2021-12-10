@@ -1,2 +1,2 @@
 # gaSI21
-Code and ancilliary filles for Geographical Analysis special issue submission
+Code and ancilliary files for Geographical Analysis special issue submission
