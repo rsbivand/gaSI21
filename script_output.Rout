@@ -2,7 +2,7 @@
 > sink(zz, type = "message")
 
 > ###################################################
-> ### code chunk number 10: GA_bivand_SI_1.Rnw:131-165 (eval = FALSE)
+> ### code chunk number 10: GA_bivand_SI_2.Rnw:128-162 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > z <- readRDS("all_z_211124.rds")
@@ -28,8 +28,9 @@
 > par(oopar)
 
 > ###################################################
-> ### code chunk number 12: GA_bivand_SI_1.Rnw:201-204
+> ### code chunk number 12: GA_bivand_SI_2.Rnw:198-201
 > ####################################### .... [TRUNCATED] 
+Linking to GEOS 3.10.1, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
 
 > df_tracts <- st_read("df_tracts.gpkg", quiet=TRUE)
 
@@ -37,7 +38,7 @@
 [1] 71353    29
 
 > ###################################################
-> ### code chunk number 13: GA_bivand_SI_1.Rnw:211-213
+> ### code chunk number 13: GA_bivand_SI_2.Rnw:208-210
 > ####################################### .... [TRUNCATED] 
 [1] "NAD83"
 
@@ -45,7 +46,7 @@
 [1] TRUE
 
 > ###################################################
-> ### code chunk number 14: GA_bivand_SI_1.Rnw:221-225
+> ### code chunk number 14: GA_bivand_SI_2.Rnw:218-222
 > ####################################### .... [TRUNCATED] 
 Spherical geometry (s2) switched off
 
@@ -57,7 +58,7 @@ Spherical geometry (s2) switched off
 Spherical geometry (s2) switched on
 
 > ###################################################
-> ### code chunk number 15: GA_bivand_SI_1.Rnw:232-234
+> ### code chunk number 15: GA_bivand_SI_2.Rnw:229-231
 > ####################################### .... [TRUNCATED] 
 
 > datasummary(s2 + lwgeom + percent_diff ~ P0 + P25 + Median + Mean + P75 + P100, data=data.frame(s2=df_tracts$area, lwgeom=as.numeric(NISTunits::NIST .... [TRUNCATED] 
@@ -73,11 +74,11 @@ percent\_diff & \num{-0.32} & \num{-0.14} & \num{-0.08} & \num{-0.06} & \num{0.0
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 16: GA_bivand_SI_1.Rnw:239-240
+> ### code chunk number 16: GA_bivand_SI_2.Rnw:236-237
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 17: GA_bivand_SI_1.Rnw:247-248
+> ### code chunk number 17: GA_bivand_SI_2.Rnw:244-245
 > ####################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lrrrr}
@@ -89,7 +90,7 @@ All & \num{5938} & \num{52942} & \num{12340} & \num{133}\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 18: GA_bivand_SI_1.Rnw:258-264
+> ### code chunk number 18: GA_bivand_SI_2.Rnw:255-261
 > ####################################### .... [TRUNCATED] 
 
 > ESRI_labels <- c("High", "Medium", "Low")
@@ -101,7 +102,7 @@ All & \num{5938} & \num{52942} & \num{12340} & \num{133}\\
 +     right=TRUE, include.lowest=TRUE, ordered_result=TRUE)
 
 > ###################################################
-> ### code chunk number 19: GA_bivand_SI_1.Rnw:273-275
+> ### code chunk number 19: GA_bivand_SI_2.Rnw:270-272
 > ####################################### .... [TRUNCATED] 
 
 > cat(append(strsplit(o, "\\n")[[1]], c("& & \\multicolumn{4}{c}{population}\\\\", "\\cmidrule{3-6}"), 3), sep="\n")
@@ -120,17 +121,17 @@ All & N & 68211 & 2993 & 16 & 71353\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 20: GA_bivand_SI_1.Rnw:285-289
+> ### code chunk number 20: GA_bivand_SI_2.Rnw:282-286
 > ####################################### .... [TRUNCATED] 
 
 > chicago_MA_tracts <- !is.na(match(substring(df_tracts$GEOID, 1, 5), chicago_MA$V2))
 
 > chicago_MA_sf <- df_tracts[chicago_MA_tracts,]
 
-> library(tmap) # < version 4
+> library(tmap)
 
 > ###################################################
-> ### code chunk number 21: GA_bivand_SI_1.Rnw:294-301
+> ### code chunk number 21: GA_bivand_SI_2.Rnw:291-298
 > ####################################### .... [TRUNCATED] 
 
 > tm_a1 <- tm_a0 + tm_fill("med_inc_cv", style="fisher", n=7, title="Coefficient of Variation") + tm_legend(outside=TRUE, outside.position="bottom")
@@ -140,7 +141,7 @@ All & N & 68211 & 2993 & 16 & 71353\\
 > tmap_arrange(tm_a1, tm_a2, nrow=1, ncol=2)
 
 > ###################################################
-> ### code chunk number 23: GA_bivand_SI_1.Rnw:315-323 (eval = FALSE)
+> ### code chunk number 23: GA_bivand_SI_2.Rnw:312-320 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > oopar <- par(mfrow=c(1,2))
@@ -152,14 +153,16 @@ All & N & 68211 & 2993 & 16 & 71353\\
 > par(oopar)
 
 > ###################################################
-> ### code chunk number 25: GA_bivand_SI_1.Rnw:346-351 (eval = FALSE)
+> ### code chunk number 25: GA_bivand_SI_2.Rnw:343-348 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
+Loading required package: sp
+Loading required package: spData
 
 > ###################################################
-> ### code chunk number 27: GA_bivand_SI_1.Rnw:363-366 (eval = FALSE)
+> ### code chunk number 27: GA_bivand_SI_2.Rnw:360-363 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
    user  system elapsed 
- 32.539   0.253  32.905 
+ 30.098   0.626  30.841 
 
 > ## #   user  system elapsed 
 > ## # 32.875   0.425  33.713
@@ -170,11 +173,11 @@ All & N & 68211 & 2993 & 16 & 71353\\
 Spherical geometry (s2) switched off
 
 > ###################################################
-> ### code chunk number 31: GA_bivand_SI_1.Rnw:384-388 (eval = FALSE)
+> ### code chunk number 31: GA_bivand_SI_2.Rnw:381-385 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 although coordinates are longitude/latitude, st_intersects assumes that they are planar
    user  system elapsed 
- 17.554   0.068  17.664 
+ 15.619   0.091  15.777 
 
 > ## # although coordinates are longitude/latitude, st_intersects assumes that they are planar
 > ## #   user  system elapsed 
@@ -185,7 +188,7 @@ although coordinates are longitude/latitude, st_intersects assumes that they are
 Spherical geometry (s2) switched on
 
 > ###################################################
-> ### code chunk number 35: GA_bivand_SI_1.Rnw:407-408
+> ### code chunk number 35: GA_bivand_SI_2.Rnw:404-405
 > ####################################### .... [TRUNCATED] 
 Neighbour list object:
 Number of regions: 71353 
@@ -197,7 +200,7 @@ Average number of links: 6.140541
 68844 68898 68901 69293 69294
 
 > ###################################################
-> ### code chunk number 36: GA_bivand_SI_1.Rnw:415-418
+> ### code chunk number 36: GA_bivand_SI_2.Rnw:412-415
 > ####################################### .... [TRUNCATED] 
 
 > nc_nb_subset_s2$nc
@@ -209,19 +212,27 @@ Average number of links: 6.140541
    17     4     5     1     1     1     1     1 
 
 > ###################################################
-> ### code chunk number 37: GA_bivand_SI_1.Rnw:425-429
+> ### code chunk number 37: GA_bivand_SI_2.Rnw:422-426
 > ####################################### .... [TRUNCATED] 
 
 > nb_subset_s2_no0 <- subset(nb_subset_s2, subset=not_0)
 
 > library(rgeoda)
+Loading required package: digest
+
+Attaching package: 'rgeoda'
+
+The following object is masked from 'package:spdep':
+
+    skater
+
 
 > system.time(rgeoda_nb_subset_no0 <- queen_weights(df_tracts[which(not_0),], precision_threshold=sqrt(.Machine$double.eps)))
    user  system elapsed 
-  1.847   0.000   1.851 
+  2.280   0.000   2.285 
 
 > ###################################################
-> ### code chunk number 38: GA_bivand_SI_1.Rnw:434-435
+> ### code chunk number 38: GA_bivand_SI_2.Rnw:431-432
 > ####################################### .... [TRUNCATED] 
                      name                value
 1 number of observations:                71336
@@ -234,22 +245,22 @@ Average number of links: 6.140541
 8           has isolates:                FALSE
 
 > ###################################################
-> ### code chunk number 39: GA_bivand_SI_1.Rnw:442-445 (eval = FALSE)
+> ### code chunk number 39: GA_bivand_SI_2.Rnw:439-442 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 40: GA_bivand_SI_1.Rnw:447-448 (eval = FALSE)
+> ### code chunk number 40: GA_bivand_SI_2.Rnw:444-445 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 [1] TRUE
 
 > ###################################################
-> ### code chunk number 43: GA_bivand_SI_1.Rnw:461-462 (eval = FALSE)
+> ### code chunk number 43: GA_bivand_SI_2.Rnw:458-459 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 Writing layer `df_tracts_no0' to data source `df_tracts_no0.gpkg' using driver `GPKG'
 Writing 71336 features with 29 fields and geometry type Multi Polygon.
 
 > ###################################################
-> ### code chunk number 44: GA_bivand_SI_1.Rnw:467-473
+> ### code chunk number 44: GA_bivand_SI_2.Rnw:464-470
 > ####################################### .... [TRUNCATED] 
 
 > use_python("/usr/bin/python", required = TRUE)
@@ -262,16 +273,16 @@ Writing 71336 features with 29 fields and geometry type Multi Polygon.
 
 > system.time(nb_q <- ps$weights$Queen$from_dataframe(geodf))
    user  system elapsed 
- 20.940   0.278  21.286 
+ 19.791   0.271  20.168 
 
 > ###################################################
-> ### code chunk number 45: GA_bivand_SI_1.Rnw:480-482 (eval = FALSE)
+> ### code chunk number 45: GA_bivand_SI_2.Rnw:477-479 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > nb_q_nb <- lapply(nb_q_nb, function(x) sort(x + 1))
 
 > ###################################################
-> ### code chunk number 46: GA_bivand_SI_1.Rnw:484-485 (eval = FALSE)
+> ### code chunk number 46: GA_bivand_SI_2.Rnw:481-482 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 [1] "Component 48566: Numeric: lengths (6, 7) differ"
 [2] "Component 66941: Numeric: lengths (6, 7) differ"
@@ -279,7 +290,7 @@ Writing 71336 features with 29 fields and geometry type Multi Polygon.
 > nb_q_diffs <- c(48566, 66941)
 
 > ###################################################
-> ### code chunk number 49: GA_bivand_SI_1.Rnw:505-508
+> ### code chunk number 49: GA_bivand_SI_2.Rnw:502-505
 > ####################################### .... [TRUNCATED] 
 [1] FALSE
 
@@ -288,13 +299,13 @@ Writing 71336 features with 29 fields and geometry type Multi Polygon.
 > lw_no0 <- nb2listw(nb_subset_s2_no0, style="W")
 
 > ###################################################
-> ### code chunk number 50: GA_bivand_SI_1.Rnw:519-520
+> ### code chunk number 50: GA_bivand_SI_2.Rnw:516-517
 > ####################################### .... [TRUNCATED] 
    user  system elapsed 
-  2.431   0.000   2.436 
+  2.162   0.001   2.176 
 
 > ###################################################
-> ### code chunk number 51: GA_bivand_SI_1.Rnw:527-530
+> ### code chunk number 51: GA_bivand_SI_2.Rnw:524-527
 > ####################################### .... [TRUNCATED] 
 
 > ncpus <- detectCores()-1L
@@ -303,10 +314,10 @@ Writing 71336 features with 29 fields and geometry type Multi Polygon.
 NULL
 
 > ###################################################
-> ### code chunk number 52: GA_bivand_SI_1.Rnw:532-535 (eval = FALSE)
+> ### code chunk number 52: GA_bivand_SI_2.Rnw:529-532 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
    user  system elapsed 
-102.315   3.173  26.862 
+ 99.471   8.308  29.052 
 
 > ## #    user  system elapsed 
 > ## # 106.373   3.027  25.257 
@@ -315,25 +326,25 @@ NULL
 > ###################################################
 > ### code chunk number 53 .... [TRUNCATED] 
    user  system elapsed 
-  8.084   0.012   2.131 
+  7.046   0.052   2.092 
 
 > ###################################################
-> ### code chunk number 56: GA_bivand_SI_1.Rnw:558-560
+> ### code chunk number 56: GA_bivand_SI_2.Rnw:555-557
 > ####################################### .... [TRUNCATED] 
 
 > all.equal(a, unname(localI_med_inc_cv_cond_no0[,1]))
 [1] TRUE
 
 > ###################################################
-> ### code chunk number 57: GA_bivand_SI_1.Rnw:567-569
+> ### code chunk number 57: GA_bivand_SI_2.Rnw:564-566
 > ####################################### .... [TRUNCATED] 
 
 > system.time(localI_med_inc_cv_ps <- esda$Moran_Local(geodf["med_inc_cv"], nb_q, transformation="R", permutations=499L, n_jobs=ncpus, geoda_quads=TRU .... [TRUNCATED] 
    user  system elapsed 
-  2.272   0.991   7.998 
+  2.109   0.678   7.159 
 
 > ###################################################
-> ### code chunk number 58: GA_bivand_SI_1.Rnw:576-579
+> ### code chunk number 58: GA_bivand_SI_2.Rnw:573-576
 > ####################################### .... [TRUNCATED] 
 
 > x <- sapply(v, function(x) localI_med_inc_cv_ps[[x]])[-nb_q_diffs,]
@@ -342,7 +353,7 @@ NULL
 [1] TRUE
 
 > ###################################################
-> ### code chunk number 59: GA_bivand_SI_1.Rnw:591-598
+> ### code chunk number 59: GA_bivand_SI_2.Rnw:588-595
 > ####################################### .... [TRUNCATED] 
 
 > py_perm_z <- localI_med_inc_cv_ps$p_z_sim[-nb_q_diffs]
@@ -355,23 +366,22 @@ NULL
 
 > geoda_perm <- lisa_pvalues(localI_med_inc_cv_perm_rgeoda)[-nb_q_diffs]
 
-> datasummary_correlation(data.frame("spdep Z"=spdep_perm_z, "PySAL Z"=py_perm_z, "spdep punif"=spdep_perm_prob, "spdep rank"=spdep_perm_rank, "PySAL" .... [TRUNCATED] 
+> datasummary_correlation(data.frame("spdep Z"=spdep_perm_z, "PySAL Z"=py_perm_z, "spdep rank"=spdep_perm_rank, "PySAL rank"=py_perm, "rgeoda rank"=ge .... [TRUNCATED] 
 
-\begin{tabular}[t]{lrrrrrr}
+\begin{tabular}[t]{lrrrrr}
 \toprule
-  & spdep Z & PySAL Z & spdep punif & spdep rank & PySAL & rgeoda\\
+  & spdep Z & PySAL Z & spdep rank & PySAL rank & rgeoda rank\\
 \midrule
-spdep Z & 1 & . & . & . & . & .\\
-PySAL Z & \num{.9915} & 1 & . & . & . & .\\
-spdep punif & \num{.9683} & \num{.9695} & 1 & . & . & .\\
-spdep rank & \num{.9683} & \num{.9695} & \num{1.0000} & 1 & . & .\\
-PySAL & \num{.9611} & \num{.9713} & \num{.9908} & \num{.9908} & 1 & .\\
-rgeoda & \num{.9623} & \num{.9697} & \num{.9887} & \num{.9887} & \num{.9910} & 1\\
+spdep Z & 1 & . & . & . & .\\
+PySAL Z & \num{.9915} & 1 & . & . & .\\
+spdep rank & \num{.9683} & \num{.9695} & 1 & . & .\\
+PySAL rank & \num{.9611} & \num{.9713} & \num{.9908} & 1 & .\\
+rgeoda rank & \num{.9623} & \num{.9697} & \num{.9887} & \num{.9910} & 1\\
 \bottomrule
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 60: GA_bivand_SI_1.Rnw:611-619
+> ### code chunk number 60: GA_bivand_SI_2.Rnw:608-616
 > ####################################### .... [TRUNCATED] 
 
 > g0 <- lisa_clusters(localI_med_inc_cv_perm_rgeoda)[-nb_q_diffs]
@@ -404,7 +414,7 @@ All & N & 7832 & 1503 & 2091 & 4216 & 55692 & 71334\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 61: GA_bivand_SI_1.Rnw:630-638
+> ### code chunk number 61: GA_bivand_SI_2.Rnw:627-635
 > ####################################### .... [TRUNCATED] 
 
 > a <- quadrs$mean
@@ -437,7 +447,7 @@ All & N & 5447 & 917 & 1157 & 2681 & 61134 & 71336\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 62: GA_bivand_SI_1.Rnw:654-660
+> ### code chunk number 62: GA_bivand_SI_2.Rnw:651-657
 > ####################################### .... [TRUNCATED] 
 
 > a_2[localI_med_inc_cv_perm_no0[-nb_q_diffs, 6] > 0.05] <- as.integer(NA)
@@ -466,11 +476,11 @@ All & N & 5401 & 891 & 1120 & 2677 & 61245 & 71334\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 63: GA_bivand_SI_1.Rnw:668-669
+> ### code chunk number 63: GA_bivand_SI_2.Rnw:665-666
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 64: GA_bivand_SI_1.Rnw:679-686
+> ### code chunk number 64: GA_bivand_SI_2.Rnw:676-683
 > ####################################### .... [TRUNCATED] 
 
 > a[localI_med_inc_cv_perm_no0[, 6] > 0.05] <- as.integer(NA)
@@ -501,7 +511,7 @@ All & N & 5447 & 917 & 1157 & 2681 & 61134 & 71336\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 65: GA_bivand_SI_1.Rnw:700-707
+> ### code chunk number 65: GA_bivand_SI_2.Rnw:697-704
 > ####################################### .... [TRUNCATED] 
 
 > zero <- table(quadrs$pysal)
@@ -530,7 +540,7 @@ High-High & 14972 & 14972 & 15413 & 22084\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 66: GA_bivand_SI_1.Rnw:720-725
+> ### code chunk number 66: GA_bivand_SI_2.Rnw:717-722
 > ####################################### .... [TRUNCATED] 
 
 > a[localI_med_inc_cv_perm_no0[, 6] > 0.05] <- as.integer(NA)
@@ -557,7 +567,7 @@ All & N & 1655 & 138 & 1772 & 3641 & 64130 & 71336\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 67: GA_bivand_SI_1.Rnw:734-735
+> ### code chunk number 67: GA_bivand_SI_2.Rnw:731-732
 > ####################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lll}
@@ -570,28 +580,28 @@ Kurtosis & 64.07 & 0.37\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 68: GA_bivand_SI_1.Rnw:747-748 (eval = FALSE)
+> ### code chunk number 68: GA_bivand_SI_2.Rnw:744-745 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 69: GA_bivand_SI_1.Rnw:750-751 (eval = FALSE)
+> ### code chunk number 69: GA_bivand_SI_2.Rnw:747-748 (eval = FALSE)
 > ######################## .... [TRUNCATED] 
 
 > df2 <- as.data.frame(log_localI_med_inc_cv_no0[,8:9])
 
-> df1$trans <- "none"
+> df1$transform <- "none"
 
-> df2$trans <- "log"
+> df2$transform <- "log"
 
 > df3 <- rbind(df1, df2)
 
-> df3$trans <- factor(df3$trans, levels=c("none", "log"))
+> df3$transform <- factor(df3$transform, levels=c("none", "log"))
 
-> datasummary((Skewness + Kurtosis)*trans ~ P0 + P25 + Median + Mean + P75 + P100, df3, output="latex_tabular")
+> datasummary((Skewness + Kurtosis)*transform ~ P0 + P25 + Median + Mean + P75 + P100, df3, output="latex_tabular")
 
 \begin{tabular}[t]{llrrrrrr}
 \toprule
-  & trans & P0 & P25 & Median & Mean & P75 & P100\\
+  & transform & P0 & P25 & Median & Mean & P75 & P100\\
 \midrule
 Skewness & none & \num{-15.39} & \num{-1.29} & \num{-0.89} & \num{-0.34} & \num{1.05} & \num{13.74}\\
  & log & \num{-0.78} & \num{-0.10} & \num{0.00} & \num{0.00} & \num{0.10} & \num{0.67}\\
@@ -601,7 +611,7 @@ Kurtosis & none & \num{-0.45} & \num{1.58} & \num{2.79} & \num{6.96} & \num{5.47
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 72: GA_bivand_SI_1.Rnw:778-783
+> ### code chunk number 72: GA_bivand_SI_2.Rnw:775-780
 > ####################################### .... [TRUNCATED] 
 
 > c[log_localI_med_inc_cv_no0[,6] > 0.05] <- as.integer(NA)
@@ -628,7 +638,7 @@ All & N & 4651 & 1306 & 1317 & 4460 & 59602 & 71336\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 73: GA_bivand_SI_1.Rnw:795-798
+> ### code chunk number 73: GA_bivand_SI_2.Rnw:792-795
 > ####################################### .... [TRUNCATED] 
 
 > chicago_MA_lw <- nb2listw(nb_chicago_MA_tracts, style="W")
@@ -641,15 +651,15 @@ Percentage nonzero weights: 0.2949756
 Average number of links: 6.474715 
 
 > ###################################################
-> ### code chunk number 74: GA_bivand_SI_1.Rnw:805-806
+> ### code chunk number 74: GA_bivand_SI_2.Rnw:802-803
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 75: GA_bivand_SI_1.Rnw:813-814
+> ### code chunk number 75: GA_bivand_SI_2.Rnw:810-811
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 76: GA_bivand_SI_1.Rnw:821-825
+> ### code chunk number 76: GA_bivand_SI_2.Rnw:818-822
 > ####################################### .... [TRUNCATED] 
 
 > chicago_MA_sf$hs_ac_q <- chicago_MA_sf$hs_sad_q <- chicago_MA_sf$hs_pr1_q <- q
@@ -659,7 +669,7 @@ Average number of links: 6.474715
 > is.na(chicago_MA_sf$hs_pr1_q) <- chicago_MA_localI_med_inc_cv_perm[,6] > 0.1
 
 > ###################################################
-> ### code chunk number 77: GA_bivand_SI_1.Rnw:832-840
+> ### code chunk number 77: GA_bivand_SI_2.Rnw:829-837
 > ####################################### .... [TRUNCATED] 
 
 > fig6_0 <- unclass(chicago_MA_sf$hs_pr1_q)
@@ -677,21 +687,21 @@ Average number of links: 6.474715
 > chicago_MA_sf$hs_fig6_q <- factor(fig6, levels=1:4, labels=lbs)
 
 > ###################################################
-> ### code chunk number 78: GA_bivand_SI_1.Rnw:847-852
+> ### code chunk number 78: GA_bivand_SI_2.Rnw:844-849
 > ####################################### .... [TRUNCATED] 
    user  system elapsed 
-  8.069   0.048   8.163 
+  7.503   0.027   7.579 
 
 > ###################################################
-> ### code chunk number 79: GA_bivand_SI_1.Rnw:857-858
+> ### code chunk number 79: GA_bivand_SI_2.Rnw:854-855
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 80: GA_bivand_SI_1.Rnw:865-869
+> ### code chunk number 80: GA_bivand_SI_2.Rnw:862-866
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 82: GA_bivand_SI_1.Rnw:883-886
+> ### code chunk number 82: GA_bivand_SI_2.Rnw:880-883
 > ####################################### .... [TRUNCATED] 
 
 > log_chicago_MA_localI_med_inc_cv_cond <- localmoran(log_cv, chicago_MA_lw)
@@ -699,7 +709,7 @@ Average number of links: 6.474715
 > log_chicago_MA_localI_med_inc_cv_perm <- localmoran_perm(log_cv, chicago_MA_lw, nsim=999, iseed=1)
 
 > ###################################################
-> ### code chunk number 83: GA_bivand_SI_1.Rnw:894-895
+> ### code chunk number 83: GA_bivand_SI_2.Rnw:891-892
 > ####################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lll}
@@ -712,24 +722,24 @@ Kurtosis & 34.26 & 0.42\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 84: GA_bivand_SI_1.Rnw:905-912
+> ### code chunk number 84: GA_bivand_SI_2.Rnw:902-909
 > ####################################### .... [TRUNCATED] 
 
 > df2 <- as.data.frame(log_chicago_MA_localI_med_inc_cv_perm[,8:9])
 
-> df1$trans <- "none"
+> df1$transform <- "none"
 
-> df2$trans <- "log"
+> df2$transform <- "log"
 
 > df3 <- rbind(df1, df2)
 
-> df3$trans <- factor(df3$trans, levels=c("none", "log"))
+> df3$transform <- factor(df3$transform, levels=c("none", "log"))
 
-> datasummary((Skewness + Kurtosis)*trans ~ P0 + P25 + Median + Mean + P75 + P100, df3, output="latex_tabular")
+> datasummary((Skewness + Kurtosis)*transform ~ P0 + P25 + Median + Mean + P75 + P100, df3, output="latex_tabular")
 
 \begin{tabular}[t]{llrrrrrr}
 \toprule
-  & trans & P0 & P25 & Median & Mean & P75 & P100\\
+  & transform & P0 & P25 & Median & Mean & P75 & P100\\
 \midrule
 Skewness & none & \num{-4.79} & \num{-1.59} & \num{-1.24} & \num{-0.44} & \num{1.30} & \num{3.44}\\
  & log & \num{-0.46} & \num{-0.14} & \num{-0.02} & \num{-0.01} & \num{0.12} & \num{0.37}\\
@@ -739,7 +749,7 @@ Kurtosis & none & \num{0.44} & \num{3.28} & \num{4.78} & \num{5.42} & \num{6.68}
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 85: GA_bivand_SI_1.Rnw:919-925
+> ### code chunk number 85: GA_bivand_SI_2.Rnw:916-922
 > ####################################### .... [TRUNCATED] 
 
 > sd2 <- chicago_MA_localI_med_inc_cv_perm[,5]
@@ -753,7 +763,7 @@ Kurtosis & none & \num{0.44} & \num{3.28} & \num{4.78} & \num{5.42} & \num{6.68}
 > pr6 <- log_chicago_MA_localI_med_inc_cv_perm[,6]
 
 > ###################################################
-> ### code chunk number 86: GA_bivand_SI_1.Rnw:933-934
+> ### code chunk number 86: GA_bivand_SI_2.Rnw:930-931
 > ####################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lrrrrrr}
@@ -770,7 +780,7 @@ Log rank & \num{.8532} & \num{.8519} & \num{.9029} & \num{.9973} & \num{.9986} &
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 87: GA_bivand_SI_1.Rnw:945-953
+> ### code chunk number 87: GA_bivand_SI_2.Rnw:942-950
 > ####################################### .... [TRUNCATED] 
 
 > plot(density(chicago_MA_sf$med_inc_cv), main="Med. income CV", xlab="CV")
@@ -784,7 +794,7 @@ Log rank & \num{.8532} & \num{.8519} & \num{.9029} & \num{.9973} & \num{.9986} &
 > par(oopar)
 
 > ###################################################
-> ### code chunk number 88: GA_bivand_SI_1.Rnw:962-965
+> ### code chunk number 88: GA_bivand_SI_2.Rnw:959-962
 > ####################################### .... [TRUNCATED] 
 
 > sad <- localmoran.sad(lm_obj, nb=nb_chicago_MA_tracts, style="W", alternative="two.sided")
@@ -792,7 +802,7 @@ Log rank & \num{.8532} & \num{.8519} & \num{.9029} & \num{.9973} & \num{.9986} &
 > log_chicago_MA_localI_med_inc_cv_sad <- as.data.frame(sad)
 
 > ###################################################
-> ### code chunk number 89: GA_bivand_SI_1.Rnw:972-979
+> ### code chunk number 89: GA_bivand_SI_2.Rnw:969-976
 > ####################################### .... [TRUNCATED] 
 
 > chicago_MA_sf$lhs_pr_q <- chicago_MA_sf$lhs_psd_q <- q
@@ -808,11 +818,11 @@ Log rank & \num{.8532} & \num{.8519} & \num{.9029} & \num{.9973} & \num{.9986} &
 > is.na(chicago_MA_sf$lhs_pr_q) <- log_chicago_MA_localI_med_inc_cv_perm[,6] > 0.05
 
 > ###################################################
-> ### code chunk number 90: GA_bivand_SI_1.Rnw:985-989
+> ### code chunk number 90: GA_bivand_SI_2.Rnw:982-986
 > ####################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 92: GA_bivand_SI_1.Rnw:1016-1017
+> ### code chunk number 92: GA_bivand_SI_2.Rnw:1013-1014
 > ##################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{llrrrrrr}
@@ -844,17 +854,17 @@ log1p(dens) & High & \num{0.00} & \num{0.33} & \num{1.34} & \num{1.35} & \num{2.
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 93: GA_bivand_SI_1.Rnw:1029-1030
+> ### code chunk number 93: GA_bivand_SI_2.Rnw:1026-1027
 > ##################################### .... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 94: GA_bivand_SI_1.Rnw:1037-1039
+> ### code chunk number 94: GA_bivand_SI_2.Rnw:1034-1036
 > ##################################### .... [TRUNCATED] 
 
 > lm_modI <- lm.morantest(lm_mod, lw, alternative="two.sided")
 
 > ###################################################
-> ### code chunk number 95: GA_bivand_SI_1.Rnw:1046-1054
+> ### code chunk number 95: GA_bivand_SI_2.Rnw:1043-1051
 > ##################################### .... [TRUNCATED] 
 
 > nb_q0 <- ps$weights$Queen$from_dataframe(geodf0)
@@ -872,7 +882,7 @@ log1p(dens) & High & \num{0.00} & \num{0.33} & \num{1.34} & \num{1.35} & \num{2.
 > py_ols <- spr$OLS(y, X, w=nb_q0, spat_diag=TRUE, moran=TRUE)
 
 > ###################################################
-> ### code chunk number 96: GA_bivand_SI_1.Rnw:1058-1063
+> ### code chunk number 96: GA_bivand_SI_2.Rnw:1055-1060
 > ##################################### .... [TRUNCATED] 
 
 > library(tibble)
@@ -884,13 +894,13 @@ log1p(dens) & High & \num{0.00} & \num{0.33} & \num{1.34} & \num{1.35} & \num{2.
 > class(py_OLS_ms) <- "modelsummary_list"
 
 > ###################################################
-> ### code chunk number 97: GA_bivand_SI_1.Rnw:1070-1072
+> ### code chunk number 97: GA_bivand_SI_2.Rnw:1067-1069
 > ##################################### .... [TRUNCATED] 
 
 > lm_modwI <- lm.morantest(lm_modw, lw, alternative="two.sided")
 
 > ###################################################
-> ### code chunk number 98: GA_bivand_SI_1.Rnw:1078-1082
+> ### code chunk number 98: GA_bivand_SI_2.Rnw:1075-1079
 > ##################################### .... [TRUNCATED] 
 
 > mod_list[[1]][[2]] <- as_tibble(cbind(mod_list[[1]][[2]][,-9], data.frame("Moran's I"=unname(lm_modI$estimate[1]), "Pr (|I| > 0)"=lm_modI$p.value, c .... [TRUNCATED] 
@@ -900,7 +910,7 @@ log1p(dens) & High & \num{0.00} & \num{0.33} & \num{1.34} & \num{1.35} & \num{2.
 > mod_list <- c(mod_list, list("PySAL OLS"=py_OLS_ms))
 
 > ###################################################
-> ### code chunk number 99: GA_bivand_SI_1.Rnw:1089-1090
+> ### code chunk number 99: GA_bivand_SI_2.Rnw:1086-1087
 > ##################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lccc}
@@ -936,40 +946,53 @@ Pr (|I| > 0) & \num{0.000} & \num{0.000} & \num{0.000}\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 100: GA_bivand_SI_1.Rnw:1100-1103
+> ### code chunk number 100: GA_bivand_SI_2.Rnw:1097-1101
 > #################################### .... [TRUNCATED] 
+Loading required package: Matrix
+
+Attaching package: 'spatialreg'
+
+The following objects are masked from 'package:spdep':
+
+    get.ClusterOption, get.coresOption, get.mcOption,
+    get.VerboseOption, get.ZeroPolicyOption, set.ClusterOption,
+    set.coresOption, set.mcOption, set.VerboseOption,
+    set.ZeroPolicyOption
+
+
+> lwCS <- as(lw, "CsparseMatrix")
 
 > library(sphet)
 
 Attaching package: 'sphet'
 
-The following object is masked from 'package:spdep':
+The following object is masked from 'package:spatialreg':
 
     impacts
 
 
 > system.time(SEM_GMM <- spreg(form, data=df_tracts, listw=lwCS, model="error", het=FALSE))
    user  system elapsed 
-  3.280   0.037   3.062 
+  3.048   0.127   2.954 
 
 > ###################################################
-> ### code chunk number 101: GA_bivand_SI_1.Rnw:1110-1111
+> ### code chunk number 101: GA_bivand_SI_2.Rnw:1108-1109
 > #################################### .... [TRUNCATED] 
    user  system elapsed 
-  3.265   0.001   2.917 
+  3.659   0.236   3.649 
 
 > ###################################################
-> ### code chunk number 102: GA_bivand_SI_1.Rnw:1118-1120
+> ### code chunk number 102: GA_bivand_SI_2.Rnw:1116-1118
 > #################################### .... [TRUNCATED] 
    user  system elapsed 
-  1.183   0.003   0.806 
+  1.088   0.007   0.759 
 
 > system.time(py_SEM_GMMh <- spr$GM_Error_Het(y, X, w=nb_q0))
    user  system elapsed 
-  1.311   0.001   0.867 
+  1.205   0.006   0.811 
 
 > ###################################################
-> ### code chunk number 103: GA_bivand_SI_1.Rnw:1125-1140
+> ### code chunk number 103: GA_bivand_SI_2.Rnw:1123-1138
 > #################################### .... [TRUNCATED] 
 
 > ti <- data.frame(term=rownames(x), estimate=x[,1], std.error=x[,2])
@@ -1001,7 +1024,7 @@ The following object is masked from 'package:spdep':
 > class(py_SEM_GMMh_ms) <- "modelsummary_list"
 
 > ###################################################
-> ### code chunk number 104: GA_bivand_SI_1.Rnw:1148-1149
+> ### code chunk number 104: GA_bivand_SI_2.Rnw:1146-1147
 > #################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lcccc}
@@ -1030,31 +1053,31 @@ rho & \num{0.263} & \num{0.273} & \num{0.268} & \num{0.279}\\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 105: GA_bivand_SI_1.Rnw:1159-1162
+> ### code chunk number 105: GA_bivand_SI_2.Rnw:1157-1160
 > #################################### .... [TRUNCATED] 
 
-> SEM_Haus <- spatialreg::Hausman.test(SEM)
+> SEM_Haus <- Hausman.test(SEM)
 
 > apply(SEM$timings, 2, sum)
 user.self   elapsed 
-    5.406     5.429 
+    5.226     5.363 
 
 > ###################################################
-> ### code chunk number 106: GA_bivand_SI_1.Rnw:1169-1171
+> ### code chunk number 106: GA_bivand_SI_2.Rnw:1167-1169
 > #################################### .... [TRUNCATED] 
 
 > apply(SEMw$timings, 2, sum)
 user.self   elapsed 
-    4.803     4.763 
+    4.860     4.847 
 
 > ###################################################
-> ### code chunk number 107: GA_bivand_SI_1.Rnw:1178-1180
+> ### code chunk number 107: GA_bivand_SI_2.Rnw:1176-1178
 > #################################### .... [TRUNCATED] 
 
 > mod_list[[1]][[2]] <- as_tibble(cbind(mod_list[[1]][[2]], data.frame("Spatial Hausman (approx.)"=unname(SEM_Haus$statistic), "Spatial Hausman Pr (>  ..." ... [TRUNCATED] 
 
 > ###################################################
-> ### code chunk number 108: GA_bivand_SI_1.Rnw:1188-1189
+> ### code chunk number 108: GA_bivand_SI_2.Rnw:1186-1187
 > #################################### .... [TRUNCATED] 
 
 \begin{tabular}[t]{lcc}
@@ -1091,187 +1114,7 @@ Spatial Hausman Pr (> 0) & \num{0.000} & \\
 \end{tabular}
 
 > ###################################################
-> ### code chunk number 109: GA_bivand_SI_1.Rnw:1199-1200
-> #################################### .... [TRUNCATED] 
-
-> ###################################################
-> ### code chunk number 110: GA_bivand_SI_1.Rnw:1202-1205 (eval = FALSE)
-> ##################### .... [TRUNCATED] 
-
-> nb_st <- poly2nb(states, row.names=as.character(states$ST))
-
-> names(nb_st) <- as.character(states$ST)
-
-> ###################################################
-> ### code chunk number 111: GA_bivand_SI_1.Rnw:1207-1208 (eval = FALSE)
-> ##################### .... [TRUNCATED] 
-Loading required package: nlme
-This is mgcv 1.8-38. For overview type 'help("mgcv-package")'.
-
-> GAM_RE <- gam(update(form, . ~ . + s(ST, bs="re")), data=df_tracts)
-
-> GAM_REw <- gam(update(form, . ~ . + s(ST, bs="re")), data=df_tracts, weights=tot_pop)
-
-> ###################################################
-> ### code chunk number 114: GA_bivand_SI_1.Rnw:1228-1230
-> #################################### .... [TRUNCATED] 
-
-> GAM_MRFw <- gam(update(form, . ~ . + s(ST, bs="mrf", k=49, xt=list(nb=nb_st))), data=df_tracts, weights=tot_pop)
-
-> ###################################################
-> ### code chunk number 115: GA_bivand_SI_1.Rnw:1234-1258
-> #################################### .... [TRUNCATED] 
-
-> x <- sx$p.table
-
-> ti <- data.frame(term=rownames(x), estimate=x[,1], std.error=x[,2])
-
-> gl <- data.frame("Pr(s(ST) > 0)"=sx$s.table[4], "Explained deviance"=sx$dev.expl, check.names=FALSE)
-
-> GAM_RE_ms <- list(tidy = ti, glance = gl)
-
-> class(GAM_RE_ms) <- "modelsummary_list"
-
-> sx <- summary(GAM_REw)
-
-> x <- sx$p.table
-
-> ti <- data.frame(term=rownames(x), estimate=x[,1], std.error=x[,2])
-
-> gl <- data.frame("Pr(s(ST) > 0)"=sx$s.table[4], "Explained deviance"=sx$dev.expl, check.names=FALSE)
-
-> GAM_REw_ms <- list(tidy = ti, glance = gl)
-
-> class(GAM_REw_ms) <- "modelsummary_list"
-
-> sx <- summary(GAM_MRF)
-
-> x <- sx$p.table
-
-> ti <- data.frame(term=rownames(x), estimate=x[,1], std.error=x[,2])
-
-> gl <- data.frame("Pr(s(ST) > 0)"=sx$s.table[4], "Explained deviance"=sx$dev.expl, check.names=FALSE)
-
-> GAM_MRF_ms <- list(tidy = ti, glance = gl)
-
-> class(GAM_MRF_ms) <- "modelsummary_list"
-
-> sx <- summary(GAM_MRFw)
-
-> x <- sx$p.table
-
-> ti <- data.frame(term=rownames(x), estimate=x[,1], std.error=x[,2])
-
-> gl <- data.frame("Pr(s(ST) > 0)"=sx$s.table[4], "Explained deviance"=sx$dev.expl, check.names=FALSE)
-
-> GAM_MRFw_ms <- list(tidy = ti, glance = gl)
-
-> class(GAM_MRFw_ms) <- "modelsummary_list"
-
-> ###################################################
-> ### code chunk number 116: GA_bivand_SI_1.Rnw:1265-1266
-> #################################### .... [TRUNCATED] 
-
-\begin{tabular}[t]{lcccc}
-\toprule
-  & IID & Weighted IID & MRF & Weighted MRF\\
-\midrule
-(Intercept) & \num{0.406} & \num{0.689} & \num{0.431} & \num{0.710}\\
- & (\num{0.060}) & (\num{0.060}) & (\num{0.059}) & (\num{0.059})\\
-log1p(med\_inc\_acs) & \num{-0.274} & \num{-0.306} & \num{-0.274} & \num{-0.306}\\
- & (\num{0.005}) & (\num{0.005}) & (\num{0.005}) & (\num{0.005})\\
-log1p(vacancy\_rate) & \num{0.706} & \num{0.631} & \num{0.706} & \num{0.632}\\
- & (\num{0.027}) & (\num{0.030}) & (\num{0.027}) & (\num{0.030})\\
-log1p(old\_rate) & \num{0.025} & \num{0.235} & \num{0.024} & \num{0.234}\\
- & (\num{0.041}) & (\num{0.042}) & (\num{0.041}) & (\num{0.042})\\
-log1p(black\_rate) & \num{0.300} & \num{0.204} & \num{0.298} & \num{0.202}\\
- & (\num{0.014}) & (\num{0.014}) & (\num{0.014}) & (\num{0.014})\\
-log1p(hisp\_rate) & \num{0.094} & \num{0.078} & \num{0.093} & \num{0.077}\\
- & (\num{0.017}) & (\num{0.016}) & (\num{0.017}) & (\num{0.016})\\
-log1p(group\_pop) & \num{-0.001} & \num{0.002} & \num{-0.001} & \num{0.003}\\
- & (\num{0.001}) & (\num{0.001}) & (\num{0.001}) & (\num{0.001})\\
-log1p(dens) & \num{0.053} & \num{0.055} & \num{0.054} & \num{0.055}\\
- & (\num{0.002}) & (\num{0.002}) & (\num{0.002}) & (\num{0.002})\\
-\midrule
-Pr(s(ST) > 0) & \num{0.000} & \num{0.000} & \num{0.000} & \num{0.000}\\
-Explained deviance & \num{0.173} & \num{0.176} & \num{0.173} & \num{0.176}\\
-\bottomrule
-\end{tabular}
-
-> ###################################################
-> ### code chunk number 117: GA_bivand_SI_1.Rnw:1276-1286
-> #################################### .... [TRUNCATED] 
-
-> upper <- aggregate(chicago_MA_sf["upper"], list(chicago_MA_sf$upper), head, n=1)
-
-> nb_upper <- poly2nb(upper, row.names=as.character(upper$upper))
-
-> names(nb_upper) <- as.character(upper$upper)
-
-> GAM_IID_ch <- gam(update(form, . ~ . + s(upper, bs="re")), data=chicago_MA_sf)
-
-> upper$GAM_IID <- aggregate(predict(GAM_IID_ch, type="terms", se=TRUE)$fit[,8], list(chicago_MA_sf$upper), mean)$x
-
-> GAM_MRF_ch <- gam(update(form, . ~ . + s(upper, bs="mrf", k=22, xt=list(nb=nb_upper))), data=chicago_MA_sf)
-
-> upper$GAM_MRF <- aggregate(predict(GAM_MRF_ch, type="terms", se=TRUE)$fit[,8], list(chicago_MA_sf$upper), mean)$x
-
-> st_write(upper, "upper.gpkg", append=FALSE)
-Writing layer `upper' to data source `upper.gpkg' using driver `GPKG'
-Writing 22 features with 4 fields and geometry type Unknown (any).
-
-> st_write(chicago_MA_sf, "chicago_MA_sf.gpkg", append=FALSE)
-Writing layer `chicago_MA_sf' to data source `chicago_MA_sf.gpkg' using driver `GPKG'
-Writing 2195 features with 38 fields and geometry type Multi Polygon.
-
-> ###################################################
-> ### code chunk number 118: GA_bivand_SI_1.Rnw:1293-1294
-> #################################### .... [TRUNCATED] 
-
->>> import numpy as np
->>> import geopandas as gp
->>> data = gp.read_file('chicago_MA_sf.gpkg')
->>> upper_gp = gp.read_file('upper.gpkg')
->>> import libpysal as ps
->>> W2 = ps.weights.Queen.from_dataframe(upper_gp, idVariable='upper')
->>> W2.transform = 'r'
->>> membership = data.upper.apply(lambda x: W2.id_order.index(x)).values
->>> y = np.log((data.med_inc_cv.values.reshape(-1,1)+1))
->>> X = np.log((data[['med_inc_acs', 'vacancy_rate', 'old_rate',
->>>     'black_rate', 'hisp_rate', 'group_pop', 'dens']].values+1))
->>> import spvcm
->>> vcse = spvcm.Upper_SE(y, X, M=W2, membership=membership, n_samples=5000, 
->>>     configs=dict(tuning=1000, adapt_step=1.01))
->>> trace_dataframe = vcse.trace.to_df()
->>> import pandas as pd
->>> trace_dataframe.to_csv("trace_dataframe.csv")
-
-> ###################################################
-> ### code chunk number 119: GA_bivand_SI_1.Rnw:1299-1300 (eval = FALSE)
-> ##################### .... [TRUNCATED] 
-
-> ###################################################
-> ### code chunk number 120: GA_bivand_SI_1.Rnw:1307-1310
-> #################################### .... [TRUNCATED] 
-
-> trace_mcmc <- mcmc(as.matrix(read.csv("trace_dataframe.csv")))
-
-> upper$spSE <- apply(trace_mcmc[,5:26], 2, mean)
-
-> ###################################################
-> ### code chunk number 121: GA_bivand_SI_1.Rnw:1315-1323
-> #################################### .... [TRUNCATED] 
-
-> tm_b3 <- tm_b0 + tm_fill(c("GAM_IID"), style="pretty", n=6, title="GAM IID upper level random effects", midpoint=0) + tm_layout(, legend.outside=TRU .... [TRUNCATED] 
-
-> tm_b1 <- tm_b0 + tm_fill(c("GAM_MRF"), style="pretty", n=6, title="GAM MRF upper level ICAR random effects", midpoint=0) + tm_layout(, legend.outsid .... [TRUNCATED] 
-
-> tm_b2 <- tm_b0 + tm_fill(c("spSE"), style="pretty", n=6, title="spvcm upper level SAR components", midpoint=0) + tm_layout(, legend.outside=TRUE, le .... [TRUNCATED] 
-
-> tmap_arrange(tm_b3, tm_b1, tm_b2, nrow=1, ncol=3)
-
-> ###################################################
-> ### code chunk number 123: GA_bivand_SI_1.Rnw:1352-1355
+> ### code chunk number 109: GA_bivand_SI_2.Rnw:1208-1211
 > #################################### .... [TRUNCATED] 
 
 > library(tidycensus)
@@ -1286,7 +1129,7 @@ The following object is masked from 'package:modelsummary':
 > options(tigris_use_cache=TRUE)
 
 > ###################################################
-> ### code chunk number 124: GA_bivand_SI_1.Rnw:1357-1358 (eval = FALSE)
+> ### code chunk number 110: GA_bivand_SI_2.Rnw:1213-1214 (eval = FALSE)
 > ##################### .... [TRUNCATED] 
 R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
@@ -1309,42 +1152,42 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] tidycensus_1.1     coda_0.19-4        mgcv_1.8-38        nlme_3.1-153      
- [5] sphet_1.11         tibble_3.1.6       reticulate_1.22    rgeoda_0.0.8-6    
- [9] digest_0.6.29      spdep_1.1-13       spData_2.0.1       sp_1.4-6          
-[13] mapsf_0.3.0        tmap_3.3-2         modelsummary_0.9.4 sf_1.0-5          
-[17] wordcloud_2.6      RColorBrewer_1.1-2
+ [1] tidycensus_1.1     sphet_2.0          spatialreg_1.2-1   Matrix_1.4-0      
+ [5] tibble_3.1.6       reticulate_1.22    rgeoda_0.0.8-6     digest_0.6.29     
+ [9] spdep_1.2-2        spData_2.0.1       sp_1.4-6           mapsf_0.4.0       
+[13] tmap_3.3-2         modelsummary_0.9.4 sf_1.0-6           wordcloud_2.6     
+[17] RColorBrewer_1.1-2
 
 loaded via a namespace (and not attached):
   [1] leafem_0.1.6       colorspace_2.0-2   deldir_1.0-6      
-  [4] ellipsis_0.3.2     class_7.3-19       rgdal_1.5-27      
-  [7] leaflet_2.0.4.1    rprojroot_2.0.2    base64enc_0.1-3   
+  [4] ellipsis_0.3.2     class_7.3-19       leaflet_2.0.4.1   
+  [7] rgdal_1.5-29       rprojroot_2.0.2    base64enc_0.1-3   
  [10] dichromat_2.0-0    rstudioapi_0.13    proxy_0.4-26      
  [13] fansi_0.5.0        mvtnorm_1.1-3      xml2_1.3.3        
- [16] codetools_0.2-18   splines_4.1.2      knitr_1.36        
- [19] jsonlite_1.7.2     tmaptools_3.1-1    broom_0.7.10      
+ [16] codetools_0.2-18   splines_4.1.2      knitr_1.37        
+ [19] jsonlite_1.7.2     tmaptools_3.1-1    broom_0.7.11      
  [22] png_0.1-7          readr_2.1.1        compiler_4.1.2    
- [25] httr_1.4.2         backports_1.4.0    assertthat_0.2.1  
- [28] Matrix_1.3-4       fastmap_1.1.0      s2_1.0.7          
- [31] htmltools_0.5.2    tools_4.1.2        glue_1.5.1        
- [34] dplyr_1.0.7        wk_0.5.0           rappdirs_0.3.3    
+ [25] httr_1.4.2         backports_1.4.1    assertthat_0.2.1  
+ [28] fastmap_1.1.0      s2_1.0.7           htmltools_0.5.2   
+ [31] tools_4.1.2        coda_0.19-4        glue_1.6.0        
+ [34] dplyr_1.0.7        wk_0.6.0           rappdirs_0.3.3    
  [37] tables_0.9.6       gmodels_2.18.1     Rcpp_1.0.7        
- [40] raster_3.5-2       vctrs_0.3.8        gdata_2.18.0      
- [43] svglite_2.0.0      tigris_1.5         leafsync_0.1.0    
- [46] crosstalk_1.2.0    insight_0.14.5     lwgeom_0.2-8      
- [49] xfun_0.28          stringr_1.4.0      rvest_1.0.2       
- [52] lifecycle_1.0.1    gtools_3.9.2       XML_3.99-0.8      
- [55] terra_1.4-22       LearnBayes_2.15.1  MASS_7.3-54       
- [58] scales_1.1.1       hms_1.1.1          expm_0.999-6      
- [61] spatialreg_1.2-1   stringi_1.7.6      NISTunits_1.0.1   
- [64] maptools_1.1-2     spDataLarge_2.0.2  e1071_1.7-9       
+ [40] raster_3.5-11      vctrs_0.3.8        gdata_2.18.0      
+ [43] svglite_2.0.0      nlme_3.1-153       tigris_1.5        
+ [46] leafsync_0.1.0     crosstalk_1.2.0    insight_0.14.5    
+ [49] lwgeom_0.2-8       xfun_0.29          stringr_1.4.0     
+ [52] rvest_1.0.2        lifecycle_1.0.1    gtools_3.9.2      
+ [55] XML_3.99-0.8       terra_1.4-22       LearnBayes_2.15.1 
+ [58] MASS_7.3-54        scales_1.1.1       hms_1.1.1         
+ [61] expm_0.999-6       stringi_1.7.6      NISTunits_1.0.1   
+ [64] maptools_1.1-2     spDataLarge_2.0.3  e1071_1.7-9       
  [67] checkmate_2.0.0    boot_1.3-28        rlang_0.4.12      
  [70] pkgconfig_2.0.3    systemfonts_1.0.3  evaluate_0.14     
  [73] lattice_0.20-45    purrr_0.3.4        htmlwidgets_1.5.4 
  [76] tidyselect_1.1.1   here_1.0.1         magrittr_2.0.1    
- [79] R6_2.5.1           generics_0.1.1     DBI_1.1.1         
+ [79] R6_2.5.1           generics_0.1.1     DBI_1.1.2         
  [82] pillar_1.6.4       foreign_0.8-81     units_0.7-2       
- [85] stars_0.5-4        abind_1.4-5        performance_0.8.0 
+ [85] stars_0.5-5        abind_1.4-5        performance_0.8.0 
  [88] crayon_1.4.2       uuid_1.0-3         KernSmooth_2.23-20
  [91] utf8_1.2.2         tzdb_0.2.0         rmarkdown_2.11    
  [94] grid_4.1.2         classInt_0.4-3     webshot_0.5.2     
@@ -1353,9 +1196,9 @@ loaded via a namespace (and not attached):
 
 > sf_extSoftVersion()
           GEOS           GDAL         proj.4 GDAL_with_GEOS     USE_PROJ_H 
-      "3.10.1"        "3.4.0"        "8.2.0"         "true"         "true" 
+      "3.10.1"        "3.4.1"        "8.2.1"         "true"         "true" 
           PROJ 
-       "8.2.0" 
+       "8.2.1" 
 
 > sink(type = "message")
 
